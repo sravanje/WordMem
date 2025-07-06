@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/toolbar_layout">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/toolb2"
+            android:background="@color/colorPrimary"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/toolbar_layout"
+        android:background="@color/colorPrimaryLight"/>
+
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvinfo"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="flashcard activity"-->
+<!--        android:textSize="20dp"-->
+<!--        android:layout_marginLeft="125dp"-->
+<!--        android:layout_marginTop="350dp"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_centerHorizontal="true"/>-->
+
+
+    <com.wajahatkarim3.easyflipview.EasyFlipView
+        android:id="@+id/main_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_centerInParent="true"
+        android:background="@color/colorPrimary"
+        app:flipOnTouch="true"
+        app:flipEnabled="true"
+        app:flipDuration="400"
+        app:flipFrom="right"
+        app:flipType="horizontal"
+        app:autoFlipBack="false"
+        >
+
+        <!-- Back Layout Goes Here -->
+        <include layout="@layout/flash_card_layout_back"/>
+
+        <!-- Front Layout Goes Here -->
+        <include layout="@layout/flash_card_layout_front"/>
+
+    </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="40dp"
+        android:weightSum="100.0">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't know"
+            android:layout_weight="33.3"
+            android:backgroundTint="@color/colorPrimaryLight"
+            android:textColor="@color/colorTextGreen"
+            android:onClick="newWord"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Neutral"
+            android:layout_weight="33.3"
+            android:backgroundTint="@color/colorPrimaryLight"
+            android:textColor="@color/colorTextGreen"
+            android:onClick="newWord"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Know it"
+            android:layout_weight="33.3"
+            android:backgroundTint="@color/colorPrimaryLight"
+            android:textColor="@color/colorTextGreen"
+            android:onClick="newWord"/>
+
+    </LinearLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_filter"/>
+
+
+</LinearLayout>
