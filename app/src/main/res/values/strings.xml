@@ -7,4 +7,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="open">open</string>
     <string name="close">close</string>
+    
+    <!-- Source filter options -->
+    <string-array name="source_options">
+        <item>Any</item>
+        <item>Own Definition</item>
+        <item>Vocabulary.com</item>
+        <item>DictionaryAPI</item>
+    </string-array>
 </resources>

@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.analysis:
-                Toast.makeText(this,"This section is yet to be added", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(this,"This section is yet to be added", Toast.LENGTH_SHORT).show();
                 Intent anIntent = new Intent(this, WordAnalysisActivity.class);
                 this.startActivity(anIntent);
                 break;
@@ -94,12 +94,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 this.startActivity(flashcardIntent );
                 break;
 
-            case R.id.about_app:
-                Toast.makeText(this,"This section is yet to be added", Toast.LENGTH_SHORT).show();
-                break;
-
             case R.id.about_developer:
-                Toast.makeText(this,"This section is yet to be added", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(this,"This section is yet to be added", Toast.LENGTH_SHORT).show();
                 Intent devIntent = new Intent(this, AboutActivity.class);
                 this.startActivity(devIntent);
                 break;

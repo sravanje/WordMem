@@ -55,11 +55,11 @@
         app:autoFlipBack="false"
         >
 
+        <!-- Front Layout Goes Here (First child shows by default) -->
+        <include layout="@layout/flash_card_layout_front"/>
+
         <!-- Back Layout Goes Here -->
         <include layout="@layout/flash_card_layout_back"/>
-
-        <!-- Front Layout Goes Here -->
-        <include layout="@layout/flash_card_layout_front"/>
 
     </com.wajahatkarim3.easyflipview.EasyFlipView>
 
@@ -73,31 +73,31 @@
 
 
         <Button
+            android:id="@+id/btn_dont_know"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Don't know"
             android:layout_weight="33.3"
             android:backgroundTint="@color/colorPrimaryLight"
-            android:textColor="@color/colorTextGreen"
-            android:onClick="newWord"/>
+            android:textColor="@color/colorTextGreen"/>
 
         <Button
+            android:id="@+id/btn_neutral"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Neutral"
             android:layout_weight="33.3"
             android:backgroundTint="@color/colorPrimaryLight"
-            android:textColor="@color/colorTextGreen"
-            android:onClick="newWord"/>
+            android:textColor="@color/colorTextGreen"/>
 
         <Button
+            android:id="@+id/btn_know_it"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Know it"
             android:layout_weight="33.3"
             android:backgroundTint="@color/colorPrimaryLight"
-            android:textColor="@color/colorTextGreen"
-            android:onClick="newWord"/>
+            android:textColor="@color/colorTextGreen"/>
 
     </LinearLayout>
 

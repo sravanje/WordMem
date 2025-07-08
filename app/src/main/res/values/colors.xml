@@ -9,6 +9,7 @@
     <color name="colorTextGreen">#C0FFAC</color>
 
     <color name="colorPrimaryLight">#182E14</color>
-    <color name="colorNav">#ffffff</color>
+    <color name="colorNav">#060606</color>
+    <color name="colorDark">#121212</color>
 
 </resources>

@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -37,6 +38,7 @@ public class Fragment_Words_Input extends Fragment {
         View view = getView();
         // getting elements in view
         final EditText ed = view.findViewById(R.id.word_input);
+        final Spinner sourceSpinner = view.findViewById(R.id.source_spinner);
 
         // Database
         final DatabaseAccess databaseAccess = DatabaseAccess.getInstance(getContext());
@@ -57,10 +59,28 @@ public class Fragment_Words_Input extends Fragment {
                     InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
 
-                    String word = ed.getText().toString().toLowerCase();
+                    String word = ed.getText().toString().toLowerCase().replace(".", " ").replace(",", " ").replaceAll("\\s+", " ").trim();
+                    int selectedSourceIndex = sourceSpinner.getSelectedItemPosition();
 
                     databaseAccess.open();
-                    List<String> meaning_map = databaseAccess.getMeaning(word);
+                    List<String> meaning_map;
+                    
+                    // Filter by source based on spinner selection
+                    // 0 = Any, 1 = Own Definition, 2 = Vocabulary.com, 3 = DictionaryAPI
+                    switch (selectedSourceIndex) {
+                        case 1: // Own Definition
+                            meaning_map = databaseAccess.getMeaningBySource(word, 1);
+                            break;
+                        case 2: // Vocabulary.com
+                            meaning_map = databaseAccess.getMeaningBySource(word, 0);
+                            break;
+                        case 3: // DictionaryAPI
+                            meaning_map = databaseAccess.getMeaningBySource(word, 2);
+                            break;
+                        default: // Any
+                            meaning_map = databaseAccess.getMeaning(word);
+                            break;
+                    }
 
                     String meaning = meaning_map.get(0);
                     String source = meaning_map.get(1);
@@ -68,13 +88,14 @@ public class Fragment_Words_Input extends Fragment {
                     Log.v("Meaning: ", meaning);
 
                     databaseAccess.close();
+                    
+                    // Always navigate to definition fragment, let it handle the "not found" case
                     arguments.putString("word", word);
                     arguments.putString("meaning", meaning);
                     arguments.putString("source", source);
                     defFragment.setArguments(arguments);
 
                     FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-
                     fragmentTransaction.replace(R.id.words_frame, defFragment);
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();

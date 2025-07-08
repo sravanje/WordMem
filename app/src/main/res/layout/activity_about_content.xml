@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/toolbar_layout">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:id="@+id/toolb2"
+            android:background="@color/colorPrimary"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/toolbar_layout"
+        android:background="@color/colorPrimaryLight"/>
+
+    <!-- About Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:background="@color/colorPrimaryLight"
+        android:layout_margin="20dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About the Developer"
+            android:textSize="20sp"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/tvinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sravan Jayati"
+            android:textSize="24sp"
+            android:textColor="@color/colorTextGreen"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:textAllCaps="false"/>
+
+        <TextView
+            android:id="@+id/tv_website"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="www.sravanjayati.com"
+            android:textSize="18sp"
+            android:textColor="@color/colorTextGreen"
+            android:gravity="center"
+            android:padding="10dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:textAllCaps="false"/>
+
+    </LinearLayout>
+
+    <!-- App Info Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:background="@color/colorPrimaryLight"
+        android:layout_margin="20dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WordMem"
+            android:textSize="24sp"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A vocabulary learning app with flashcards, word analysis, and progress tracking."
+            android:textSize="16sp"
+            android:textColor="@color/colorText"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Version 1.0"
+            android:textSize="14sp"
+            android:textColor="@color/colorText"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</LinearLayout>

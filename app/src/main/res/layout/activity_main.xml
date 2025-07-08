@@ -21,7 +21,9 @@
         app:headerLayout="@layout/nav_header"
         android:fitsSystemWindows="true"
         android:layout_gravity="start"
-        android:background="@color/cardview_dark_background"
+        android:background="@color/colorNav"
+        app:itemTextColor="@color/colorText"
+        app:itemIconTint="@color/colorText"
         android:id="@+id/nav_view"/>
 
 

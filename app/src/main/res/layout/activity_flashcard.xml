@@ -21,6 +21,8 @@
         android:fitsSystemWindows="true"
         android:layout_gravity="start"
         android:background="@color/colorNav"
+        app:itemTextColor="@color/colorText"
+        app:itemIconTint="@color/colorText"
         android:id="@+id/nav_view"/>
 
 

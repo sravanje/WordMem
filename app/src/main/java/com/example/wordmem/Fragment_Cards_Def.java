@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,7 +14,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 public class Fragment_Cards_Def extends Fragment {
 
@@ -38,8 +38,12 @@ public class Fragment_Cards_Def extends Fragment {
             meaning.setLength(0);
 
             source = getArguments().getString("source");
-            if (source.contentEquals("1"))
+            if (source.contentEquals("0"))
+                tvsource.setText("(Vocabulary.com)");
+            else if (source.contentEquals("1"))
                 tvsource.setText("(Own definition)");
+            else if (source.contentEquals("2"))
+                tvsource.setText("(Dictionary API)");
         }
 
         return v;
@@ -61,15 +65,16 @@ public class Fragment_Cards_Def extends Fragment {
             public void onClick(View view) {
 
                 if (word.isEmpty() | tvmeaning.getText().length()==0) {
-                    Snackbar.make(view, "Word or Meaning empty", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                    Toast.makeText(getContext(), "Word or Meaning empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 // Remove word, meaning from db
 
                 databaseAccess.open();
-                databaseAccess.removeWord(word);
+                // Remove the word from the specific source it was added with
+                int currentSource = Integer.parseInt(source);
+                databaseAccess.removeWordWithSource(word, currentSource);
                 databaseAccess.close();
 
 //                Update fragment cards right after removing word from list (Refresh fragment  by replacing with itself):
@@ -79,8 +84,7 @@ public class Fragment_Cards_Def extends Fragment {
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 
-                Snackbar.make(view, "Removed word from my list: " + word, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Toast.makeText(getContext(), "Removed word from my list: " + word, Toast.LENGTH_SHORT).show();
 
 
             }

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/colorPrimaryLight">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filter Flashcards"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="------------------------------------------"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="8dp" />
+
+    <RadioGroup
+        android:id="@+id/rg_filter_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:id="@+id/rb_all_words"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All Words"
+            android:textColor="@android:color/white"
+            android:buttonTint="@android:color/white"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/rb_needs_practice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Needs Practice (0-40%)"
+            android:textColor="@android:color/white"
+            android:buttonTint="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/rb_fair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fair (40-60%)"
+            android:textColor="@android:color/white"
+            android:buttonTint="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/rb_good"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Good (60-80%)"
+            android:textColor="@android:color/white"
+            android:buttonTint="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/rb_excellent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Excellent (80-100%)"
+            android:textColor="@android:color/white"
+            android:buttonTint="@android:color/white" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textColor="@color/colorTextGreen"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btn_apply_filter"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apply"
+            android:textColor="@color/colorTextGreen"
+            android:layout_marginEnd="8dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -3,23 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="Home"
+        android:title="Word Mem"
         android:id="@+id/home"
         android:icon="@drawable/ic_home"/>
     <item
-        android:title="Word Mem Analysis"
+        android:title="Mem Analysis"
         android:id="@+id/analysis"
         android:icon="@drawable/ic_analysis"/>
     <item
-        android:title="Flash Cards"
+        android:title="Mem Cards"
         android:id="@+id/flash_cards"
         android:icon="@drawable/ic_flash"/>
     <item
-        android:title="About App"
-        android:id="@+id/about_app"
-        android:icon="@drawable/ic_about"/>
-    <item
-        android:title="About Developer"
+        android:title="App Dev"
         android:id="@+id/about_developer"
         android:icon="@drawable/ic_developer"/>
 

@@ -22,5 +22,19 @@
         android:imeOptions="actionSearch"
         android:maxLines="1"/>
 
+    <Spinner
+        android:id="@+id/source_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/word_input"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:entries="@array/source_options"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        android:minHeight="48dp"
+        android:background="@drawable/spinner_background"
+        android:theme="@style/SpinnerTheme"/>
+
 
 </RelativeLayout>

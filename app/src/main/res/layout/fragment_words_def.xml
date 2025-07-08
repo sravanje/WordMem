@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvDef"
             android:textSize="20sp"
-            android:text="(source: Vocabulary.com)"
+            android:text="(source: )"
             android:layout_marginLeft="20dp"
 
             android:layout_marginTop="8dp"

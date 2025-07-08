@@ -77,7 +77,14 @@ public class Fragment_Cards_Child extends Fragment {
                 String word = textView.getText().toString();
 
                 databaseAccess.open();
-                List<String> meaning_map = databaseAccess.getMeaning(word);
+                
+                // Get the source from the clicked item
+                HashMap<String, String> clickedItem = (HashMap<String, String>) lv.getItemAtPosition(position);
+                String itemSource = clickedItem.get("Source");
+                int sourceInt = Integer.parseInt(itemSource);
+                
+                // Get meaning from the specific source that was used to add this word
+                List<String> meaning_map = databaseAccess.getMeaningBySource(word, sourceInt);
 
                 String meaning = meaning_map.get(0);
                 String source = meaning_map.get(1);
@@ -125,7 +132,8 @@ public class Fragment_Cards_Child extends Fragment {
 
         dba.open();
 //        List<String> words = dba.getList();
-        List<HashMap<String,String>> wordMapList = dba.getMap(searchkey);
+        // Show all sources (-1 means no filter)
+        List<HashMap<String,String>> wordMapList = dba.getMapBySource(searchkey, -1);
         dba.close();
 
 //        ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, words);
